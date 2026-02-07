@@ -84,7 +84,7 @@ Setup
 
 Clone the repository and install dependencies:
 
-npm install
+<pre> ```bash npm install ``` </pre>
 
 Install Playwright browsers (required for PDF export):
 

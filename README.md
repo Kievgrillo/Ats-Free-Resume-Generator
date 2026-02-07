@@ -84,11 +84,11 @@ Setup
 
 Clone the repository and install dependencies:
 
-<pre> ```bash npm install ``` </pre>
+-- npm install 
 
 Install Playwright browsers (required for PDF export):
 
-npx playwright install
+-- npx playwright install
 
 ▶️ Usage
 1️⃣ Edit your resume data
@@ -99,7 +99,7 @@ data/resume.example.json
 
 2️⃣ Generate HTML resume
 
-npm run build
+-- npm run build
 
 Output:
 
@@ -107,7 +107,7 @@ dist/cv.html
 
 3️⃣ Generate PDF resume
 
-npm run pdf
+-- npm run pdf
 
 Output:
 

@@ -73,15 +73,12 @@ If you can edit a JSON file, you can generate a professional, ATS-compatible res
 ├─ 📄 .gitignore           # Ignores node_modules, dist, PDFs
 └─ 📄 README.md            # Documentation and usage guide
 
-🛠 Installation
 Requirements
 
 Node.js 18+
-
 npm
 
 Setup
-
 Clone the repository and install dependencies:
 
 -- npm install 

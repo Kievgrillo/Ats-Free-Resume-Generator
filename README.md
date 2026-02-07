@@ -115,11 +115,7 @@ dist/cv.pdf
 The generated PDF:
 
 ✔️ A4-ready
-
 ✔️ Keeps links clickable
-
 ✔️ Preserves clean text structure for ATS
-
 ✔️ Safe for automated resume parsers
-
 ✔️ Suitable for direct job applications

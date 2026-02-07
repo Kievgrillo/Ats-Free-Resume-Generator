@@ -13,42 +13,54 @@ const tpl = fs.readFileSync(templatePath, "utf8");
 const css = fs.readFileSync(cssPath, "utf8");
 const data = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 
-function escapeHtml(s) {
-  return String(s)
+function escapeHtml(value = "") {
+  return String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
-function skillsHtml(skills) {
+function escapeAttr(value = "") {
+  return escapeHtml(value).replaceAll("`", "&#96;");
+}
+
+function skillsHtml(skills = []) {
   return skills
     .map(
-      (g) =>
-        `<div class="item"><div class="item-title">${escapeHtml(g.group)}:</div> ${escapeHtml(
-          g.items.join(", "),
-        )}</div>`,
+      (g) => `
+<div class="item">
+  <div class="item-title">${escapeHtml(g.group)}:</div>
+  ${g.items.map(escapeHtml).join(", ")}
+</div>`
     )
     .join("\n");
 }
 
-function bulletsHtml(bullets) {
-  return `<ul class="bullets">${bullets
-    .map((b) => `<li>${escapeHtml(b)}</li>`)
-    .join("")}</ul>`;
+function bulletsHtml(bullets = []) {
+  if (!bullets.length) return "";
+  return `
+<ul class="bullets">
+  ${bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join("")}
+</ul>`;
 }
 
-function projectsHtml(projects) {
+function projectsHtml(projects = []) {
   return projects
     .map((p) => {
       const links = (p.links ?? [])
         .map(
-          (l) =>
-            `<li>${escapeHtml(l.label)}: <a href="${l.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(
-              l.url,
-            )}</a></li>`,
+          (l) => `
+<li>
+  ${escapeHtml(l.label)}:
+  <a href="${escapeAttr(l.url)}" target="_blank" rel="noopener noreferrer">
+    ${escapeHtml(l.url)}
+  </a>
+</li>`
         )
         .join("");
+
       return `
 <div class="item">
   <div class="item-title">${escapeHtml(p.title)}</div>
@@ -60,7 +72,7 @@ function projectsHtml(projects) {
     .join("\n");
 }
 
-function experienceHtml(exps) {
+function experienceHtml(exps = []) {
   return exps
     .map(
       (e) => `
@@ -73,12 +85,12 @@ function experienceHtml(exps) {
     <div class="item-date">${escapeHtml(e.date)}</div>
   </div>
   ${bulletsHtml(e.bullets)}
-</div>`,
+</div>`
     )
     .join("\n");
 }
 
-function educationHtml(eds) {
+function educationHtml(eds = []) {
   return eds
     .map(
       (e) => `
@@ -90,21 +102,23 @@ function educationHtml(eds) {
     </div>
     <div class="item-date">${escapeHtml(e.date)}</div>
   </div>
-</div>`,
+</div>`
     )
     .join("\n");
 }
 
-function languagesHtml(langs) {
+function languagesHtml(langs = []) {
   return langs
     .map(
       (l) => `
 <div class="item">
   <div class="item-header">
-    <div class="item-title">${escapeHtml(l.name)} — ${escapeHtml(l.level)}</div>
-    <div class="item-date">${escapeHtml(l.note)}</div>
+    <div class="item-title">
+      ${escapeHtml(l.name)} — ${escapeHtml(l.level)}
+    </div>
+    <div class="item-date">${escapeHtml(l.note ?? "")}</div>
   </div>
-</div>`,
+</div>`
     )
     .join("\n");
 }
@@ -112,7 +126,7 @@ function languagesHtml(langs) {
 const html = tpl
   .replace(
     `<link rel="stylesheet" href="./style.css" />`,
-    `<style>${css}</style>`,
+    `<style>${css}</style>`
   )
   .replaceAll("{{NAME}}", escapeHtml(data.name))
   .replaceAll("{{TITLE}}", escapeHtml(data.title))
@@ -120,12 +134,12 @@ const html = tpl
   .replaceAll("{{PHONE_E164}}", escapeHtml(data.phone_e164))
   .replaceAll("{{PHONE_DISPLAY}}", escapeHtml(data.phone_display))
   .replaceAll("{{LOCATION}}", escapeHtml(data.location))
-  .replaceAll("{{LINKEDIN_URL}}", data.linkedin_url)
-  .replaceAll("{{GITHUB_URL}}", data.github_url)
-  .replaceAll("{{WEBSITE_URL}}", data.website_url)
-  .replaceAll("{{LINKEDIN_TEXT}}", "linkedin.com/in/fabricio-trindade")
-  .replaceAll("{{GITHUB_TEXT}}", "github.com/fabriciotrinndade")
-  .replaceAll("{{WEBSITE_TEXT}}", "fabriciotrindade.com.br")
+  .replaceAll("{{LINKEDIN_URL}}", escapeAttr(data.linkedin_url))
+  .replaceAll("{{GITHUB_URL}}", escapeAttr(data.github_url))
+  .replaceAll("{{WEBSITE_URL}}", escapeAttr(data.website_url ?? ""))
+  .replaceAll("{{LINKEDIN_TEXT}}", escapeHtml(data.linkedin_text ?? "LinkedIn"))
+  .replaceAll("{{GITHUB_TEXT}}", escapeHtml(data.github_text ?? "GitHub"))
+  .replaceAll("{{WEBSITE_TEXT}}", escapeHtml(data.website_text ?? "Website"))
   .replaceAll("{{SUMMARY}}", escapeHtml(data.summary))
   .replaceAll("{{SKILLS_HTML}}", skillsHtml(data.skills))
   .replaceAll("{{PROJECTS_HTML}}", projectsHtml(data.projects))
@@ -134,4 +148,4 @@ const html = tpl
   .replaceAll("{{LANGUAGES_HTML}}", languagesHtml(data.languages));
 
 fs.writeFileSync(path.join(distDir, "cv.html"), html, "utf8");
-console.log("Gerado: dist/cv.html");
+console.log("✔ Currículo gerado em: dist/cv.html");

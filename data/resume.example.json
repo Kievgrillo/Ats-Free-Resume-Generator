@@ -1,102 +1,74 @@
 {
-  "name": "FABRICIO TRINDADE",
-  "title": "Full Stack • Web Development",
-  "email": "example@email.com",
-  "phone_e164": "+10000000000",
-  "phone_display": "(00) 00000-0000",
-  "location": "Remote / Brazil",
-  "linkedin_url": "https://www.linkedin.com/in/example-profile",
-  "github_url": "https://github.com/example-user",
-  "website_url": "https://example.com",
+  "name": "Full Name",
+  "title": "Software Engineer",
+  "email": "your.email@example.com",
+  "phone_e164": "+5511999999999",
+  "phone_display": "(11) 99999-9999",
+  "location": "Remote / Country",
+  "linkedin_url": "https://www.linkedin.com/in/your-profile",
+  "github_url": "https://github.com/your-username",
 
-  "summary": "Computer Science student with a strong foundation in programming logic and hands-on experience building web applications and APIs. Familiar with cloud fundamentals, system troubleshooting, and structured problem-solving. Seeking an internship focused on cloud infrastructure, monitoring, and automation, with emphasis on clean architecture and ATS-friendly documentation.",
+  "summary": "Brief professional summary describing your experience, main technologies, areas of expertise, and career focus. Keep it concise, ATS-friendly, and focused on impact, responsibilities, and technical skills.",
 
   "skills": [
     {
       "group": "Programming",
-      "items": ["JavaScript", "Node.js", "HTML", "CSS", "SQL"]
+      "items": ["C#", ".NET", "JavaScript", "SQL"]
     },
     {
       "group": "Frameworks",
-      "items": ["Next.js", "Express.js", "React"]
+      "items": ["ASP.NET Core", "ASP.NET MVC", "Minimal APIs"]
     },
     {
       "group": "Databases",
-      "items": ["PostgreSQL", "MongoDB", "ORM concepts"]
+      "items": ["SQL Server", "Entity Framework Core", "Dapper"]
     },
     {
       "group": "Cloud & Infrastructure",
-      "items": [
-        "Cloud fundamentals",
-        "Monitoring concepts",
-        "Networking basics",
-        "Linux basics"
-      ]
+      "items": ["Docker", "Cloud Services"]
     },
     {
       "group": "Tools",
-      "items": ["Git", "GitHub", "Docker", "CI/CD concepts"]
-    }
-  ],
-
-  "projects": [
-    {
-      "title": "Full Stack Web Application",
-      "stack": "Node.js, REST APIs, PostgreSQL",
-      "bullets": [
-        "Designed and implemented a full stack web application with a clear separation of concerns",
-        "Built RESTful APIs with authentication and basic access control",
-        "Applied structured data modeling and version control best practices"
-      ],
-      "links": [
-        {
-          "label": "Repository",
-          "url": "https://github.com/example-user/sample-project"
-        }
-      ]
-    },
-    {
-      "title": "Personal Automation Tool",
-      "stack": "JavaScript, Node.js",
-      "bullets": [
-        "Developed a small automation script to streamline repetitive tasks",
-        "Focused on code readability, maintainability, and documentation",
-        "Practiced modular design and error handling"
-      ]
+      "items": ["Git", "CI/CD", "IDE of choice"]
     }
   ],
 
   "experience": [
     {
-      "role": "Technical Support Analyst",
-      "company": "Example Technology Company",
-      "date": "2021 — Present",
+      "role": "Software Engineer",
+      "company": "Company Name - Remote",
+      "date": "Month Year — Present",
       "bullets": [
-        "Provided technical support and troubleshooting for systems and network-related issues",
-        "Assumed operational coordination responsibilities on multiple occasions, organizing tasks and prioritizing incidents",
-        "Communicated technical problems clearly to both technical and non-technical stakeholders"
+        "Describe your main responsibilities, technologies used, and system context.",
+        "Highlight performance improvements, scalability, or architectural contributions.",
+        "Mention collaboration with product, business, or engineering teams."
+      ]
+    },
+    {
+      "role": "Previous Role",
+      "company": "Previous Company - Location",
+      "date": "Month Year — Month Year",
+      "bullets": [
+        "Describe key contributions and technical challenges solved.",
+        "Mention relevant methodologies, tools, or frameworks used.",
+        "Focus on measurable impact when possible."
       ]
     }
   ],
 
   "education": [
     {
-      "title": "Bachelor’s Degree in Computer Science",
-      "subtitle": "Example University",
-      "date": "In progress — Expected 2029"
-    },
-    {
-      "title": "Associate Degree in Systems Analysis and Development",
-      "subtitle": "Example University",
-      "date": "Completed — 2023"
+      "title": "Degree Title",
+      "subtitle": "University or Institution Name",
+      "date": "Start Year - End Year"
     }
   ],
 
   "languages": [
     {
-      "name": "English",
-      "level": "Intermediate",
-      "note": "Technical reading and conversational skills"
+      "name": "Language",
+      "level": "Proficiency Level",
+      "note": "Optional note about study or usage context."
     }
   ]
 }

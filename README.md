@@ -80,30 +80,34 @@ Node.js 18+
 
 npm
 
+Setup
+
 Clone the repository and install dependencies:
+
 npm install
 
 Install Playwright browsers (required for PDF export):
+
 npx playwright install
 
 ▶️ Usage
 1️⃣ Edit your resume data
 
-Open and edit:
+Open and edit the file below — this is the only file you need to change:
+
 data/resume.example.json
-This is the only file you need to change.
 
 2️⃣ Generate HTML resume
-npm run build
 
+npm run build
 
 Output:
 
 dist/cv.html
 
 3️⃣ Generate PDF resume
-npm run pdf
 
+npm run pdf
 
 Output:
 
@@ -113,10 +117,12 @@ dist/cv.pdf
 
 The generated PDF:
 
-✔️ Is A4-ready
+✔️ A4-ready
 
 ✔️ Keeps links clickable
 
-✔️ Is safe for ATS parsing
+✔️ Preserves clean text structure for ATS
 
-✔️ Is suitable for direct job applications
+✔️ Safe for automated resume parsers
+
+✔️ Suitable for direct job applications

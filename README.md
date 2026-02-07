@@ -1,77 +1,68 @@
-# 📄 ATS-First Resume Generator (HTML + PDF)
+This project is a lightweight, ATS-first resume generator built for developers and technical professionals who want **full control** over their resume without relying on paid resume builders or restrictive visual editors.
 
-This project is a **lightweight, ATS-first resume generator** built for developers and technical professionals who want **full control** over their resume — without relying on paid resume builders, visual editors, or third-party platforms.
+You edit a single structured JSON file, and the system generates:
 
-You edit **a single structured JSON file**, and the system generates:
+- a clean, ATS-friendly HTML resume
+- a printable PDF with clickable links
 
-- ✅ A clean, **ATS-friendly HTML resume**
-- ✅ A **printable PDF** with clickable links
-
-No subscriptions.  
-No watermarks.  
-No hidden limitations.
+No subscriptions. No watermarks. No hidden limitations.
 
 ---
 
-## 🚀 Why This Project Exists
+## Why this project exists
 
-Most resume builders today:
+Many resume builders:
 
-- Charge to unlock basic features  
-- Restrict formatting unless you pay  
-- Store your data on third-party platforms  
-- Generate PDFs that **break ATS parsing**
+- charge to unlock basic features
+- limit formatting unless you pay
+- store your data on third-party platforms
+- generate PDFs that break ATS parsing
 
-This project takes a different approach.
+This project takes a different approach:
 
-### Core Principles
+- **Content-first**: your resume lives in a JSON file
+- **ATS-first**: single column, clean text, no icons or tables
+- **Reproducible**: same input always generates the same output
+- **Offline & open-source**: no account, no tracking, no lock-in
 
-- **Content-first**: your resume lives in a JSON file  
-- **ATS-first**: single column, clean text, no icons or tables  
-- **Reproducible**: same input always generates the same output  
-- **Offline & open-source**: no account, no tracking, no lock-in  
-
-If you can edit a JSON file, you can generate a professional, ATS-compatible resume.
+If you can edit a JSON file, you can generate a professional ATS-compatible resume.
 
 ---
 
-## ⚙️ How It Works
+## How it works
 
 1. You edit `data/resume.example.json`
 2. The project renders it into a clean HTML resume
-3. The HTML is exported to PDF using a headless browser (Playwright)
-
-### The final PDF preserves:
-
-- Layout consistency  
-- Clean text structure for ATS  
-- Clickable links (`<a href="">`)
+3. The HTML is exported to PDF using a headless browser
+4. The final PDF preserves:
+   - layout consistency
+   - text structure for ATS
+   - clickable links (`<a href>`)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-```text
-📦 cv-ats-html
-├─ 📁 templates
-│  ├─ 📄 ats.html          # ATS-first HTML template (single column)
-│  └─ 📄 style.css         # Print-safe, ATS-safe styles
-│
-├─ 📁 data
-│  └─ 📄 resume.example.json # Structured resume data (edit this file)
-│
-├─ 📁 scripts
-│  ├─ 📄 render.mjs        # Renders JSON → HTML
-│  └─ 📄 export-pdf.mjs    # Exports HTML → PDF (Playwright)
-│
-├─ 📁 dist                 # Generated output (gitignored)
-│  ├─ 📄 cv.html
-│  └─ 📄 cv.pdf
-│
-├─ 📄 package.json         # Project scripts and dependencies
-├─ 📄 package-lock.json    # Dependency lockfile
-├─ 📄 .gitignore           # Ignores node_modules, dist, PDFs
-└─ 📄 README.md            # Documentation and usage guide
+📦 cv-ats-html<br>
+├─ 📁 templates<br>
+│ ├─ 📄 ats.html # ATS-first HTML template (single column)<br>
+│ └─ 📄 style.css # Print-safe, ATS-safe styles<br>
+│<br>
+├─ 📁 data<br>
+│ └─ 📄 resume.example.json # Structured resume data (edit this file)<br>
+│<br>
+├─ 📁 scripts<br>
+│ ├─ 📄 render.mjs # Renders JSON → HTML<br>
+│ └─ 📄 export-pdf.mjs # Exports HTML → PDF (Playwright)<br>
+│<br>
+├─ 📁 dist # Generated output (gitignored)<br>
+│ ├─ 📄 cv.html<br>
+│ └─ 📄 cv.pdf<br>
+│<br>
+├─ 📄 package.json # Project scripts and dependencies<br>
+├─ 📄 package-lock.json # Dependency lockfile<br>
+├─ 📄 .gitignore # Ignores node_modules, dist, PDFs<br>
+└─ 📄 README.md # Documentation and usage guide<br>
 
 ---
 
@@ -125,8 +116,8 @@ Output:
 
 ## The PDF:
 
-✔️ A4-ready
-✔️ Keeps links clickable
-✔️ Preserves clean text structure for ATS
-✔️ Safe for automated resume parsers
-✔️ Suitable for direct job applications
+- is A4-ready
+- keeps links clickable
+- is safe for ATS parsing
+- is suitable for direct job applications
+

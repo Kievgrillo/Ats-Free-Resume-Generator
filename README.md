@@ -73,46 +73,57 @@ If you can edit a JSON file, you can generate a professional, ATS-compatible res
 ├─ 📄 .gitignore           # Ignores node_modules, dist, PDFs
 └─ 📄 README.md            # Documentation and usage guide
 
-Requirements
+---
 
-Node.js 18+
-npm
+## Installation
 
-Setup
+Requirements:
+
+- Node.js **18+**
+- npm
+
 Clone the repository and install dependencies:
 
--- npm install 
+```bash
+npm install
+```
 
 Install Playwright browsers (required for PDF export):
 
--- npx playwright install
+```bash
+npx playwright install
+```
 
-▶️ Usage
-1️⃣ Edit your resume data
+---
 
-Open and edit the file below — this is the only file you need to change:
+## Usage
 
+1. Edit your resume data
+
+Open and edit:
 data/resume.example.json
+This is the only file you need to change.
 
-2️⃣ Generate HTML resume
+2. Generate HTML resume
 
--- npm run build
-
-Output:
-
-dist/cv.html
-
-3️⃣ Generate PDF resume
-
--- npm run pdf
+```bash
+npm run build
+```
 
 Output:
 
-dist/cv.pdf
+`dist/cv.html`
 
-📄 PDF Features
+3. Generate PDF resume
 
-The generated PDF:
+```
+npm run pdf
+```
+
+Output:
+`dist/cv.pdf`
+
+## The PDF:
 
 ✔️ A4-ready
 ✔️ Keeps links clickable
